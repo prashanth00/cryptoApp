@@ -63,8 +63,8 @@ const HeroSection = () => {
         <div className="swap-token">
           {/* <img className="hero-img" src={hero} alt="blockchain" /> */}
           <div className="swap-token-container">
-            {/* <Presale /> */}
-            <p>Presale Launching Soon!</p>
+            <Presale />
+            {/* <p>Presale Launching Soon!</p> */}
           </div>
         </div>
       </div>

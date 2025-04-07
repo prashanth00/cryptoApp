@@ -65,13 +65,14 @@ export default function ConnectModal({ coin, amount, value }) {
     }
     return (
       <div>
-        {isPrepareError && (
-          <div>
-            <a style={{ color: "red" }}>
-              {prepareErrorMsg(prepareError?.message)}
-            </a>
-          </div>
-        )}
+        {/* {isPrepareError && ( */}
+        <div>
+          <a style={{ color: "red" }}>
+            {/* {prepareErrorMsg(prepareError?.message)} */}
+            safdsafh ashjdfhjs afh f sahfghsg fhjsf as safgasfghjgfhg fjhagsyefh
+          </a>
+        </div>
+        {/* )} */}
         <button
           className="btn btn-connect"
           disabled={!write}

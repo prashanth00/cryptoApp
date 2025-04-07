@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: roqueFont;
-  src: url("D:\CP\cryptoApp\src\assets\fonts\roguehero.ttf");
+  src: url("D:\Studies\others\react js\cryptoApp\src\assets\fonts\roguehero.ttf");
 }
 
 @font-face {
   font-family: torus;
-  src: url("D:\CP\cryptoApp\src\assets\fonts\TorusNotched-Regular.ttf");
+  src: url("D:\Studies\others\react js\cryptoApp\src\assets\fonts\TorusNotched-Regular.ttf");
 }
 
 .home {
@@ -26,6 +26,26 @@
   align-items: center;
   /* font-family: Comic Sans MS; */
   font-family: torus;
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 15px;
+    }
+
+    .modal-title {
+      padding: 0 25%;
+      margin: 10px 0;
+      span {
+        display: block;
+        font-size: large;
+      }
+    }
+  }
 }
 
 a {

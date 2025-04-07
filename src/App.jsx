@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import FeatureOne from "./components/FeatureOne.jsx";
-
+import Modal from "./components/Modal.jsx";
 import Tokenomics from "./components/Tokenomics.jsx";
 // import SocialMediaPromotion from "./components/SocialMediaPromotion";
 import DevSection from "./components/DevSection.jsx";
@@ -19,7 +19,7 @@ import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { bsc, bscTestnet } from "viem/chains";
-
+import { useState, useEffect } from "react";
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet, bsc, bscTestnet],
   [publicProvider()]
@@ -66,6 +66,18 @@ function App() {
   //       "Earn Yield on your Native Assets with Impermanent Loss Protection",
   //   },
   // ];
+
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    // Show the modal when the component mounts
+    setShowModal(true);
+  }, []);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <WagmiConfig config={config}>
       <div className="home">
@@ -99,6 +111,27 @@ function App() {
       // </Routes> */}
         {/*// </Router>*/}
         <Header />
+        {showModal && (
+          <Modal handlefn={handleClose}>
+            <div className="modal-title">
+              <span>SCAMMER ALERT</span>
+            </div>
+            Dear users ,<br /> Scammers are attempting to deceive our valued
+            users by using fake contract addresses. To ensure your safety and
+            protect your investments, please note our original contract address:
+            <br />
+            <b> #address </b>
+            <br /> Important Reminders: <br />
+            <b>Verify Before Transacting:</b>
+            <br />
+            Always double-check the contract address before making any
+            transactions. Ensure it matches our official contract address
+            provided above. <br />
+            <b>Avoid Suspicious Links:</b>
+            <br /> Do not click on links from unverified sources claiming to
+            represent our cryptocurrency.
+          </Modal>
+        )}
         <div className="scroll">
           <HeroSection />
           <FeatureOne />
